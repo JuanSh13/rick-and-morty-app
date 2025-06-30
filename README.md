@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Explorador de Personajes - Rick and Morty
 
-## Getting Started
+Aplicación web desarrollada con Next.js y Tailwind CSS que permite explorar personajes de la serie Rick and Morty, filtrarlos por nombre, especie y género, y marcar tus favoritos usando almacenamiento local.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Tecnologías utilizadas
+
+- **Next.js 14** con App Router
+- **React + TypeScript**
+- **Tailwind CSS** para el diseño visual
+- **lucide-react** para íconos SVG
+- **Axios** para peticiones HTTP
+- **LocalStorage** para persistencia de favoritos
+- **Google Fonts**: Geist + Orbitron (`next/font/google`)
+
+---
+
+## Funcionalidades principales
+
+- Tarjetas visuales con:
+  - Imagen con efecto zoom + blur
+  - Overlay de información completa
+  - Ícono de corazón para marcar como favorito
+
+- Filtros dinámicos:
+  - Por nombre
+  - Por especie
+  - Por género
+
+- Favoritos persistentes:
+  - Se almacenan en localStorage
+  - Puedes alternar entre ver todos y ver solo favoritos
+  - El estado se sincroniza en toda la app con Context API
+
+- Context API:
+  - `FavoritesContext` para compartir estado entre componentes
+
+- Responsive y visualmente atractivo
+
+---
+
+## Estructura del proyecto
+
+```
+src/
+├── app/
+│   ├── layout.tsx         ← Layout global con fuentes + provider
+│   └── page.tsx           ← Página principal con filtros y tarjetas
+├── components/
+│   └── CardHoverBlurZoom.tsx ← Tarjeta visual de personaje
+├── context/
+│   └── FavoritesContext.tsx  ← Contexto global de favoritos
+├── types/
+│   └── Character.ts          ← Tipado completo de personajes
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Estado final
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Tu aplicación es una SPA moderna y funcional con:
+- Interfaz intuitiva
+- Consumo de API en tiempo real
+- Persistencia de favoritos
+- Animaciones suaves y diseño limpio
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Créditos
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- API usada: [Rick and Morty API](https://rickandmortyapi.com/)
+- Iconos: [Lucide Icons](https://lucide.dev/icons/heart)

@@ -50,7 +50,7 @@ export default function Home() {
     <div className="min-h-screen bg-gray-950 text-white px-4 py-10">
       {/* Título */}
       <h1 className="text-5xl sm:text-6xl font-extrabold text-center mb-12 text-lime-400 font-orbitron animate-fade-in-up">
-        Explorador de Personajes
+        Rick and Morty - App
       </h1>
 
       {/* Filtros + botón favoritos */}
